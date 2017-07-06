@@ -146,8 +146,13 @@ public class GoogleGuava {
         System.out.println(orderByNames.max(books));
         System.out.println(orderByNames.min(books));
         //Ordering can be used as comparator since it is implemented comparator
-        //Collection.sort() sort inplace
-        //nullFirst() null values will be the greatest values
-        Collections.sort(books, orderByNames.nullsFirst());
+        //return the top k and the bottom k element from the list
+        //Returns the k least elements from the given iterable according to this ordering,
+        // in order from least to greatest.
+        System.out.println(orderByNames.leastOf(books, 10));
+        //Returns the k greatest elements of the given iterable according to this ordering,
+        // in order from greatest to least.
+        System.out.println(orderByNames.greatestOf(books, 10));
+
     }
 }
